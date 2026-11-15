@@ -31,6 +31,9 @@ public class NowPlayingWidget extends AppWidgetProvider {
     private static final String ACTION_TOGGLE = "com.nowplaying.widget.TOGGLE";
     private static final String ACTION_NEXT = "com.nowplaying.widget.NEXT";
 
+    private static final String SHOW_PLAYER = "com.spotify.mobile.android.ui.action.player.SHOW";
+
+    private static final String SPOTIFY_MAIN = "com.spotify.music.SpotifyMainActivity";
     private static final int DEFAULT_COLOR = 0xFF1E1E1E;
     private static final int ART_MAX_PX = 480;
 
@@ -122,11 +125,16 @@ public class NowPlayingWidget extends AppWidgetProvider {
                 s.playing = Resumer.isPlaying(mc.getPlaybackState());
                 MediaMetadata md = mc.getMetadata();
                 if (md != null) Track.update(ctx, md);
-                // Spotify's own "open the player" intent: the same one its media notification uses.
-                s.open = mc.getSessionActivity();
             }
+            // Spotify's session publishes no "open player" intent, so send the action its own
+            // playback notification uses; the app then shows Now Playing.
+            if (mc != null) s.open = mc.getSessionActivity();
             if (s.open == null && access && spotify != null) {
-                s.open = PendingIntent.getActivity(ctx, 1, spotify,
+                Intent show = new Intent(SHOW_PLAYER).setClassName(MediaListener.SPOTIFY, SPOTIFY_MAIN);
+                if (show.resolveActivity(ctx.getPackageManager()) == null) show = spotify;
+                show = new Intent(show)
+                        .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                s.open = PendingIntent.getActivity(ctx, 1, show,
                         PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
             }
             if (s.open == null) {
