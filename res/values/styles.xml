@@ -1,0 +1,17 @@
+<resources>
+    <style name="Title">
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    <style name="Artist">
+        <item name="android:textColor">#C8FFFFFF</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    <style name="Btn">
+        <item name="android:background">@drawable/btn_ripple</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+</resources>

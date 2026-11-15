@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Now Playing Widget</string>
+    <string name="widget_label">Now Playing for Spotify</string>
+    <string name="widget_description">Album art with previous, play/pause and next for Spotify.</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+    <string name="setup_title">Tap to set up</string>
+    <string name="setup_subtitle">Allow notification access</string>
+    <string name="no_spotify">Spotify isn\'t installed</string>
+    <string name="idle_title">Spotify</string>
+    <string name="idle_subtitle">Nothing playing</string>
+    <string name="intro">A home screen widget for Spotify: album art, previous, play/pause and next. Tap it to open Spotify\'s player.</string>
+    <string name="status_needed">Android only lets an app see what another app is playing if it has notification access. The widget uses it for Spotify\'s track, artwork and playback state, and nothing else.</string>
+    <string name="status_ok">Notification access granted. Add the widget from your home screen\'s widget picker, or use the button below.</string>
+    <string name="grant">Allow notification access</string>
+    <string name="add">Add widget to home screen</string>
+</resources>
