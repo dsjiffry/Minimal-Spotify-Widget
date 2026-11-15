@@ -3,6 +3,9 @@
 A small Android home screen widget that controls the official Spotify app: album art,
 previous, play/pause and next. No playlists, no account, no network access.
 
+**Why:** Spotify's own widgets also show playlists, which got annoying. This one shows only
+what's playing and the buttons to control it.
+
 | 4×2 | 2×2 and taller | One row |
 | --- | --- | --- |
 | ![wide](screenshots/wide-4x2.png) | ![square](screenshots/square-art.png) | ![strip](screenshots/strip-4x1.png) |
