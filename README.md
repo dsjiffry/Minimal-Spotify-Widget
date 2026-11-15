@@ -57,8 +57,9 @@ with the same key.
 
 ## Status
 
-Tested on an Android 17 emulator against a stand-in media app. Behaviour with the real
-Spotify app, in particular resuming after Spotify was closed, depends on Spotify and may vary
+In use on a Pixel 9a (Android 17) with Spotify 9.2: track display, the three controls and
+tap-to-Now-Playing work there. Resuming playback after Spotify was closed has been tested on an
+emulator against a stand-in media app; with the real app it depends on Spotify and may vary
 between versions.
 
 ## Legal
